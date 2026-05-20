@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <title>Cyber Coin Clicker</title>
+    <style>
+        body {
+            background: #05070a;
+            color: white;
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            user-select: none;
+        }
+        .score {
+            font-size: 40px;
+            font-weight: bold;
+            color: #56d364;
+            text-shadow: 0 0 15px rgba(86, 211, 100, 0.4);
+            margin-bottom: 20px;
+        }
+        .coin {
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, #f85149, #a31d1d);
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 0 30px rgba(248, 81, 73, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 50px;
+            transition: transform 0.05s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .coin:active {
+            transform: scale(0.92);
+        }
+    </style>
+</head>
+<body>
+
+<div class="score">Balans: <span id="scoreVal">0</span> 🪙</div>
+<div class="coin" id="coinBtn">⚡</div>
+
+<script>
+    let count = 0;
+    document.getElementById('coinBtn').addEventListener('click', () => {
+        count++;
+        document.getElementById('scoreVal').innerText = count;
+    });
+</script>
+
+</body>
+</html>
